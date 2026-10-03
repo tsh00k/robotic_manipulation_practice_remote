@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pi05-remote-workspace"
+version = "0.1.0"
+description = "Remote LeRobot pi0.5 training and inference workspace"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "lerobot[pi,training,async]==0.6.1",
+]
+
+[tool.lerobot]
+# Large artifacts stay on the persistent data disk, outside this Git repository.
+data_root = "/root/autodl-tmp/pi05_ros"
